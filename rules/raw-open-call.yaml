@@ -1,0 +1,7 @@
+rules:
+  - id: raw-open-call
+    pattern: open($FILE, ...)
+    message: Consider replacing raw `open(string)` call with `pathlib.Path` and `path.open()`
+    languages:
+      - python
+    severity: ERROR

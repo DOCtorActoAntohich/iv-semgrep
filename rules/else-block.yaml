@@ -1,0 +1,29 @@
+rules:
+  - id: else-block
+    pattern-either:
+      - pattern: |
+          if ...:
+            ...
+          else:
+            ...
+      - pattern: |
+          for ... in ...:
+            ...
+          else:
+            ...
+      - pattern: |
+          while ...:
+            ...
+          else:
+            ...
+      - pattern: |
+          try:
+            ...
+          except ...:
+            ...
+          else:
+            ...
+    message: The `else` block is forbidden. Only use `else` in ternary operators.
+    languages:
+      - python
+    severity: ERROR
