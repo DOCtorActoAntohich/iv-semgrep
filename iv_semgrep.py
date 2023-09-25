@@ -4,7 +4,16 @@ from argparse import ArgumentParser
 from pathlib import Path
 from typing import List
 
-RULES = Path("rules")
+RULES_FOLDER = Path("rules")
+
+
+def root_folder() -> Path:
+    return Path(__file__).parent
+
+
+def rules_path() -> Path:
+    return root_folder() / RULES_FOLDER
+
 
 logger = logging.getLogger()
 
@@ -12,13 +21,13 @@ logger = logging.getLogger()
 def rules_with_config_prefix(rules: List[str]) -> List[str]:
     result: List[str] = []
     for rule in rules:
-        file = RULES / f"{rule}.yaml"
+        file = rules_path() / f"{rule}.yaml"
         result += ["--config", str(file)]
     return result
 
 
 def get_all_rules() -> List[str]:
-    return [str(path.stem) for path in RULES.iterdir()]
+    return [str(path.stem) for path in rules_path().iterdir()]
 
 
 def filter_rules(rules: List[str]) -> List[str]:
