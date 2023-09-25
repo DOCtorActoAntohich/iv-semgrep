@@ -6,6 +6,8 @@ from typing import List
 
 RULES_FOLDER = Path("rules")
 
+logger = logging.getLogger()
+
 
 def root_folder() -> Path:
     return Path(__file__).parent
@@ -13,9 +15,6 @@ def root_folder() -> Path:
 
 def rules_path() -> Path:
     return root_folder() / RULES_FOLDER
-
-
-logger = logging.getLogger()
 
 
 def rules_with_config_prefix(rules: List[str]) -> List[str]:
