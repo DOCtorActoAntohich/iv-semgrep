@@ -1,0 +1,5 @@
+- id: iv_semgrep
+  name: IV Semgrep
+  entry: iv_semgrep
+  language: python
+  minimum_pre_commit_version: 2.9.2
