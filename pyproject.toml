@@ -5,6 +5,9 @@ description = "My own semgrep rules"
 authors = ["DOCtorActoAntohich <fairy666death@mail.ru>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+iv_semgrep = "iv_semgrep:main"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 semgrep = "^1.41.0"
