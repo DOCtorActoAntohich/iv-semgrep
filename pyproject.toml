@@ -4,9 +4,11 @@ version = "0.1.0"
 description = "My own semgrep rules"
 authors = ["DOCtorActoAntohich <fairy666death@mail.ru>"]
 readme = "README.md"
+include = ["rules/**/*"]
 
 [tool.poetry.scripts]
 iv_semgrep = "iv_semgrep:main"
+
 
 [tool.poetry.dependencies]
 python = "^3.8"
