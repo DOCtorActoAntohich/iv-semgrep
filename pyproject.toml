@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "semgrep-rules"
+name = "iv_semgrep"
 version = "0.1.0"
 description = "My own semgrep rules"
 authors = ["DOCtorActoAntohich <fairy666death@mail.ru>"]
