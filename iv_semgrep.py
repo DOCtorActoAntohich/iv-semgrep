@@ -49,7 +49,7 @@ def filter_rules(rules: List[str]) -> List[str]:
 
 
 def run_semgrep(target: Path, rules: List[str]) -> None:
-    args = ["semgrep", "scan"]
+    args = ["semgrep", "scan", "--error"]
 
     rules = filter_rules(rules)
     if len(rules) == 0:
