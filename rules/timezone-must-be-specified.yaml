@@ -1,0 +1,8 @@
+rules:
+  - id: timezone-must-be-specified
+    pattern: |
+      datetime.datetime.now()
+    message: Constructing Naive Datetimes is dangerous. Consider adding a timezone.
+    languages:
+      - python
+    severity: ERROR
