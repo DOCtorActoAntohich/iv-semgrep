@@ -2,7 +2,7 @@ rules:
   - id: abstract-method-raise-not-implemented
     patterns:
       - pattern: |
-          @abstractmethod
+          @abc.abstractmethod
           def $F(...):
             $STATEMENTS
       - focus-metavariable: $STATEMENTS
