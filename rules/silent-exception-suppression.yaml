@@ -1,0 +1,11 @@
+rules:
+  - id: silent-exception-suppression
+    pattern: |
+      try:
+        ...
+      except ...:
+        pass
+    message: Use `contextlib.suppress(MyExceptionType)` to silently suppress exceptions
+    languages:
+      - python
+    severity: ERROR
