@@ -1,0 +1,35 @@
+rules:
+  - id: classmethod-factories
+    patterns:
+      - pattern-inside: |
+          class $CLASSNAME:
+            ...
+      - pattern-either:
+          - patterns:
+              - pattern-inside: |
+                  @staticmethod
+                  def $STATIC_FUNCTION(...):
+                    ...
+              - pattern-either:
+                  - pattern: |
+                      $VAR = $CLASSNAME(...)
+                      ...
+                      return $VAR
+                  - pattern: return $CLASSNAME(...)
+          - patterns:
+              - pattern-inside: |
+                  @classmethod
+                  def $CLASSMETHOD(cls, ...):
+                    ...
+              - pattern-either:
+                  - pattern: |
+                      $VAR = $CLASSNAME(...)
+                      ...
+                      return $VAR
+                  - pattern: return $CLASSNAME(...)
+    message:
+      A factory method must be a `@classmethod` that creates an instance via
+      `cls`
+    languages:
+      - python
+    severity: ERROR
