@@ -1,0 +1,17 @@
+rules:
+  - id: empty-collection-type-hint
+    pattern-either:
+      - patterns:
+          - pattern: |
+              $VAR = []
+          - pattern-not: |
+              $VAR: $TYPE = []
+      - patterns:
+          - pattern: |
+              $VAR = {}
+          - pattern-not: |
+              $VAR: $TYPE = {}
+    message: Empty collections require type hints for clarity
+    languages:
+      - python
+    severity: ERROR
