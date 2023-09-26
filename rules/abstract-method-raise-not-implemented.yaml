@@ -1,0 +1,17 @@
+rules:
+  - id: abstract-method-raise-not-implemented
+    patterns:
+      - pattern: |
+          @abstractmethod
+          def $F(...):
+            $STATEMENTS
+      - focus-metavariable: $STATEMENTS
+      - metavariable-pattern:
+          metavariable: $STATEMENTS
+          patterns:
+            - pattern-not: |
+                raise NotImplementedError
+    message: Abstract Methods must raise NotImplementedError
+    languages:
+      - python
+    severity: ERROR
