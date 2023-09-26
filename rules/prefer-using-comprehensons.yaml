@@ -1,0 +1,11 @@
+rules:
+  - id: prefer-using-comprehensons
+    pattern-either:
+      - pattern: |
+          map(...)
+      - pattern: |
+          filter(...)
+    message: Consider replacing `map` or `filter` with comprehension.
+    languages:
+      - python
+    severity: ERROR
