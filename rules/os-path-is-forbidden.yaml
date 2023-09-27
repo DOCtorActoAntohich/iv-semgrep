@@ -1,0 +1,7 @@
+rules:
+  - id: os-path-is-forbidden
+    pattern: os.path.$FUNCTION(...)
+    message: Replace `os.path` operations with `pathlib.Path`
+    languages:
+      - python
+    severity: WARNING
