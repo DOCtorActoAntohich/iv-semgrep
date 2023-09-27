@@ -13,7 +13,10 @@ bad_idea = map(lambda x: x * x, big_thing)
 still_bad_idea = filter(lambda x: x % 2 == 0, bad_idea)
 
 # This is not tuple, but generator expression, which is still small.
+# ok: prefer-using-comprehensons
 good_idea = (x * x for x in big_thing)
+
+# ok: prefer-using-comprehensons
 still_good_idea = (x for x in good_idea if x % 2 == 0)
 
 
@@ -26,4 +29,6 @@ class Moger:
         return self
 
 
+# Filter method of this class is not the same as built-in filter
+# ok: prefer-using-comprehensons
 weirdly_okay = Moger(list(range(10))).filter(lambda x: x % 2 == 0).values

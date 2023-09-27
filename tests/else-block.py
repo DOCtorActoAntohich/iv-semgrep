@@ -1,13 +1,16 @@
 works_fine = True
+# ok: else-block
 if works_fine:
     print("works fine")
 
 s = 0
+# ok: else-block
 for i in range(100):
     s += i
 print(s)
 
 
+# ok: else-block
 while s > 0:
     s -= 1
 
