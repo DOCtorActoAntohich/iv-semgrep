@@ -32,6 +32,32 @@ To add them, write their exact filenames, without the extension. For example:
 args: ["--target", ".", "else-block", "raw-open-call"]
 ```
 
+## `.semgrepignore`
+
+`.semgrepignore` file works as usual - files and directories listed there will not be examined.
+Put this file in the target directory.
+
+Example `.semprepignore`:
+
+```dockerfile
+# Common large paths
+node_modules/
+build/
+dist/
+vendor/
+.env/
+.venv/
+.tox/
+*.min.js
+.npm/
+.yarn/
+
+# Common test paths
+# test/
+# tests/
+*_test.go
+```
+
 ## Testing and writing more rules
 
 Go for `make test` to make tests run.
