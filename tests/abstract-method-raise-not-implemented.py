@@ -5,10 +5,12 @@ from typing import List
 class Service(ABC):
     @abstractmethod
     def good(self, a: int, b: float) -> None:
+        # ok: abstract-method-raise-not-implemented
         raise NotImplementedError
 
     @abstractmethod
     def still_okay(self):
+        # ok: abstract-method-raise-not-implemented
         raise NotImplementedError
 
     @abstractmethod
